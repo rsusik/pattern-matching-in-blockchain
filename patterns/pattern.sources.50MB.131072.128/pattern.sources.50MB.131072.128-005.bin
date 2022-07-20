@@ -1,0 +1,6 @@
+uct net_device *dev
+			= hlist_entry(p, struct net_device, index_hlist);
+		if (dev->ifindex == ifindex)
+			return dev;
+	}
+	retur

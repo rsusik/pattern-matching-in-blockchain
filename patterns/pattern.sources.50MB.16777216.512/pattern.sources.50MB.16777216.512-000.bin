@@ -1,0 +1,17 @@
+chip(substream);
+	snd_pcm_runtime_t *runtime = substream->runtime;
+	esschan_t *es = runtime->private_data;
+
+	es->dma_size = snd_pcm_lib_buffer_bytes(substream);
+	es->frag_size = snd_pcm_lib_period_bytes(substream);
+
+	es->wav_shift = 1; /* maestro handles always 16bit */
+	es->fmt = 0;
+	if (snd_pcm_format_width(runtime->format) == 16)
+		es->fmt |= ESS_FMT_16BIT;
+	if (runtime->channels > 1) {
+		es->fmt |= ESS_FMT_STEREO;
+		if (es->fmt & ESS_FMT_16BIT) /* 8bit is already word shifted */
+			es->wav_shift++;
+	}
+	

@@ -1,0 +1,12 @@
+ror condition.
+	 */
+	if (dp->dscr_cmd0 & DSCR_CMD0_V) {
+		return 0;
+	}
+
+	/* Load up buffer address and byte count.
+	*/
+	dp->dscr_source0 = virt_to_phys(buf);
+	dp->dscr_cmd1 = nbytes;
+	dp->dscr_cmd0 |= DSCR_CMD0_V;	/* Let it rip */
+	ctp->chan_ptr->ddma_dbel

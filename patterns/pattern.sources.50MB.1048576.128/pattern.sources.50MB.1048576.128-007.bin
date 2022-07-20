@@ -1,0 +1,5 @@
+     diva_free_dma_descriptor (clients[i].request, clients[i].dma_handle);
+        clients[i].dma_handle = -1;
+      }
+    }
+   

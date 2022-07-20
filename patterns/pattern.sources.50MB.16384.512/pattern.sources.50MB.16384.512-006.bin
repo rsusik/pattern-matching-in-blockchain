@@ -1,0 +1,16 @@
+efined(DEBUG) || defined(DEBUG_MMAP)
+		printk("SNDCTL_DSP_SETTRIGGER 0x%x\n", val);
+#endif
+		if (!(val & PCM_ENABLE_INPUT) && dmabuf->enable == ADC_RUNNING) {
+			stop_adc(state);
+		}
+		if (!(val & PCM_ENABLE_OUTPUT) && dmabuf->enable == DAC_RUNNING) {
+			stop_dac(state);
+		}
+		if (!(val & SPDIF_ENABLE_OUTPUT) && dmabuf->enable == CODEC_SPDIFOUT_RUNNING) {
+			stop_spdifout(state);
+		}
+		if (!(val & SPDIF_ENABLE_OUTPUT) && dmabuf->enable == CONTROLLER_SPDIFOUT_RUNNING) {
+			stop_spdifout(state);
+		}
+		dmabuf-

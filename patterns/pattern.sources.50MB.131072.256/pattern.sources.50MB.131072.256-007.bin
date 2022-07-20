@@ -1,0 +1,10 @@
+z >>= 8;
+	y ^= * (u32 *) ((u8 *) des_keymap + (0xFC & z));
+	z  = expkey[27];
+	z ^= y;
+	z  = z << 4 | z >> 28;
+	x ^= * (u32 *) ((u8 *) (des_keymap + 448) + (0xFC & z));
+	z >>= 8;
+	x ^= * (u32 *) ((u8 *) (des_keymap + 384) + (0xFC & z));
+	z >>= 8;
+	x ^= * (u

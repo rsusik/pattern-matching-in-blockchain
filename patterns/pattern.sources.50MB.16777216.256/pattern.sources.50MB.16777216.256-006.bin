@@ -1,0 +1,11 @@
+ize = swab32(s->sh_entsize);
+	}
+}
+
+static void convert_ecoff_filehdr(struct filehdr *f)
+{
+	f->f_magic = swab16(f->f_magic);
+	f->f_nscns = swab16(f->f_nscns);
+	f->f_timdat = swab32(f->f_timdat);
+	f->f_symptr = swab32(f->f_symptr);
+	f->f_nsyms = swab32(f->f_

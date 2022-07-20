@@ -1,0 +1,4 @@
+name[0] != ' ' &&
+		    !strncmp(dev->name, s[i].name, strlen(s[i].name))) {
+			dev->irq 	= s[i].map.irq;
+			dev->base_addr 	= s

@@ -1,0 +1,5 @@
+dev->tx_queue_len          = FST_TX_QUEUE_LEN;
+                dev->open                  = fst_open;
+                dev->stop                  = fst_close;
+                dev->do_ioctl              = fst_ioctl;
+                dev->watchdog_timeo       

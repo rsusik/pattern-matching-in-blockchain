@@ -1,0 +1,1 @@
+		dmabuf->codec_spdifout_channel = state->card->alloc_codec_spdi

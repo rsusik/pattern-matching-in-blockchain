@@ -1,0 +1,5 @@
+gs = dev_get_flags(dev);
+			return 0;
+
+		case SIOCSIFFLAGS:	/* Set interface flags */
+			return dev_change_flags(dev, ifr->ifr_f

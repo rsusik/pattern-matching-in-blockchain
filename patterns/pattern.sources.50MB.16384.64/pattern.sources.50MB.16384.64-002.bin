@@ -1,0 +1,3 @@
+eady && (val = prog_dmabuf(state, 1)) != 0)
+			return val;
+		spi

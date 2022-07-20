@@ -1,0 +1,16 @@
+2_SIZE		0x01000000	/* 16MB */
+
+#define DDB_PCI_IO_BASE		0x06000000
+#define DDB_PCI_IO_SIZE		0x02000000      /* 32 MB */
+
+#define	DDB_PCI_MEM_BASE	0x08000000
+#define	DDB_PCI_MEM_SIZE	0x08000000	/* 128 MB */
+
+#define	DDB_DCS5_BASE		0x13000000	/* DDB status regs */
+#define	DDB_DCS5_SIZE		0x00200000	/* 2MB, 8-bit */
+
+#define	DDB_DCS4_BASE		0x14000000	/* DDB control regs */
+#define	DDB_DCS4_SIZE		0x00200000	/* 2MB, 8-bit */
+
+#define DDB_INTCS_BASE		0x1fa00000      /* VRC5476 control regs */
+#define DDB_INTCS_SIZ

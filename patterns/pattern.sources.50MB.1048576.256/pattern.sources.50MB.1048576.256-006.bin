@@ -1,0 +1,14 @@
+tat & DDMA_STAT_H)) {
+		udelay(1);
+		halt_timeout++;
+		if (halt_timeout > 100) {
+			printk("warning: DMA channel won't halt\n");
+			break;
+		}
+	}
+	/* clear current desc valid and doorbell */
+	cp->ddma_stat |= (DDMA_STAT_DB | DDMA_STAT_V);
+	au_sync();
+}
+
+/*

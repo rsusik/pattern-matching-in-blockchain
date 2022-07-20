@@ -1,0 +1,14 @@
+TSPDIF\n");
+#endif
+		if (get_user(val, p))
+			return -EFAULT;
+		/* Check to make sure the codec supports S/PDIF transmitter */
+		if ((state->card->ac97_features & 4)) {
+			/* mask out the transmitter speed bits so the user can't set them */
+			val &= ~0x3000;
+			/* Add the current transmitter speed bits to the passed value */
+			ret = ali_ac97_get(codec, AC97_SPDIF_CONTROL);
+			val |= (ret & 0x3000);
+			ali_ac97_set(codec, AC97_SPDIF_CONTROL, val);
+			if (ali_ac97_get(codec, AC97_SPDIF_CONTROL) != val) {
+		

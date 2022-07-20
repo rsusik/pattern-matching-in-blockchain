@@ -1,0 +1,17 @@
+
+
+/* Data read from child device may need to decode
+ * through a data table and a scale.
+ * Translation type as defined by firmware.
+ */
+#define ENVCTRL_TRANSLATE_NO		0
+#define ENVCTRL_TRANSLATE_PARTIAL	1
+#define ENVCTRL_TRANSLATE_COMBINED	2
+#define ENVCTRL_TRANSLATE_FULL		3     /* table[data] */
+#define ENVCTRL_TRANSLATE_SCALE		4     /* table[data]/scale */
+
+/* Driver miscellaneous definitions. */
+#define ENVCTRL_MAX_CPU			4
+#define CHANNEL_DESC_SZ			256
+
+/* Mask values for combined GlobalAddress/PowerStat

@@ -1,0 +1,2 @@
+def DEBUG
+		printk("SNDCTL_DSP_GETODELAY %d\n", dmabuf->count);

@@ -1,0 +1,4 @@
+ (SISR_LKF | SISR_NCR);
+
+    if (sisr && --lp->timeout) {
+	sisr 

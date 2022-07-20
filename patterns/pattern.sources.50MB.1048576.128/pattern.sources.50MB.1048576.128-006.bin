@@ -1,0 +1,3 @@
+>rx_ring[DE_RX_RING_SIZE - 1].opts2 = cpu_to_le32(RingEnd);
+	wmb();
+	memset(de->tx_ring, 0, sizeof(struct de_desc) * DE_TX_RING_

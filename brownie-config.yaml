@@ -1,0 +1,6 @@
+autofetch_sources: True
+compiler:
+  solc:
+    optimizer:
+      enabled: true
+      runs: 200

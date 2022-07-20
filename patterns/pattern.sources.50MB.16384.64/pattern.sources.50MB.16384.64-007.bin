@@ -1,0 +1,3 @@
+	if (get_user(val, p))
+			return -EFAULT;
+		/* Check to make sur

@@ -1,0 +1,22 @@
+o device->bdev is done AFTER
+	 * the BLKRRPART ioctl.
+	 */
+	device->bdev = bdev;
+	return 0;
+}
+
+/*
+ * Remove all inodes in the system for a device, delete the
+ * partitions and make device unusable by setting its size to zero.
+ */
+void
+dasd_destroy_partitions(struct dasd_device * device)
+{
+	/* The two structs have 168/176 byte on 31/64 bit. */
+	struct blkpg_partition bpart;
+	struct blkpg_ioctl_arg barg;
+	struct block_device *bdev;
+
+	/*
+	 * Get the bdev pointer from the device structure and clear
+	 * device->

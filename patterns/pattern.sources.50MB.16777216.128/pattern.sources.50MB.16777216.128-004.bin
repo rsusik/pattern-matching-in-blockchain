@@ -1,0 +1,9 @@
+out->segend;
+
+	memcpy (seg->range, qout->range, 6*sizeof(struct qrange));
+	seg->segcnt = qout->segcnt;
+
+	rc = 0;
+
+ out_free:
+	if

@@ -1,0 +1,4 @@
+dev_addr);
+
+static char atalk_err_snap[] __initdata =
+	KERN_CRIT

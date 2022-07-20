@@ -1,0 +1,5 @@
+_100|MII_CR_ASSE, MII_CR, lp->phy[lp->active].addr, DE4X5_MII);\
+    omr = (inl(DE4X5_OMR) & ~(OMR_TTM | OMR_PCS | OMR_SCR | OMR_FDX));\
+    outl(omr, DE4X5_OMR);\
+  } else if (lp->useSROM && !lp->useMII) {\
+    omr = (inl(DE4X5_OMR) & ~(OMR_TTM | OMR_PCS 

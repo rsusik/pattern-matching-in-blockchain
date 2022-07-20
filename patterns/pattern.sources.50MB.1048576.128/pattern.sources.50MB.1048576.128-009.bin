@@ -1,0 +1,5 @@
+value = -1;
+    MI_XLOG_HDR *TrcData = (MI_XLOG_HDR *)xlog_buffer;
+
+    if (Adapter != clients[id].logical) {
+      return; /* I

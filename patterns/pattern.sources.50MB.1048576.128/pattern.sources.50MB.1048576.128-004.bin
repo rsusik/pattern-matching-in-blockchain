@@ -1,0 +1,3 @@
+upports relative addressing	*/
+#define SCSI_INQ_WBUS32			0x40	/* device supports 32 bit data xfers	*/
+#define SCSI_INQ_WBUS16			

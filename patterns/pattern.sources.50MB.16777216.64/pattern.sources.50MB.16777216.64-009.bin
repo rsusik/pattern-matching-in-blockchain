@@ -1,0 +1,4 @@
+/
+	if (x->aalg) {
+		if (x->aalg->alg_key_len > 512)
+			goto erro

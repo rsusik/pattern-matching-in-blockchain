@@ -1,0 +1,2 @@
+count = 0;
+				spin_unlock_irqrestore(&state->card->lock, flags)

@@ -1,0 +1,16 @@
+ably define what slots
+				 *  to use. For now, we'll only set it to the
+				 *  defaults:
+				 * 
+				 *   non multichannel codec maps to slots 3&4
+				 *   2 channel codec maps to slots 7&8
+				 *   4 channel codec maps to slots 6&9
+				 *   6 channel codec maps to slots 10&11
+				 *
+				 *  there should be some way for the app to
+				 *  select the slot assignment.
+				 */
+				i_scr = inl(state->card->iobase + ALI_SCR);
+				if (codec_independent_spdif_locked > 0) {
+
+					if ((i_scr & 0x00300000) == 0x001

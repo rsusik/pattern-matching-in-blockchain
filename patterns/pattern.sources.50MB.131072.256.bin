@@ -1,0 +1,14 @@
+fr, cmd);
+			read_unlock(&dev_base_lock);
+			if (!ret) {
+				if (colon)
+					*colon = ':';
+				if (copy_to_user(arg, &ifr,
+						 sizeof(struct ifreq)))
+					ret = -EFAULT;
+			}
+			return ret;
+
+		case SIOCETHTOOL:
+			dev_load(ifr.ifr_name);
+			rtnl_lock();

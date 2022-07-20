@@ -1,0 +1,13 @@
+e0(struct AdapterCtlBlk *acb, struct ScsiReqBlk *srb,
+		u16 *pscsi_status)
+{
+	u16 scsi_status = *pscsi_status;
+	u32 d_left_counter = 0;
+	dprintkdbg(DBG_0, "data_in_phase0: (pid#%li) <%02i-%i>\n",
+		srb->cmd->pid, srb->cmd->device->id, srb->cmd->device->lun);
+
+	/*
+	 * KG: DataIn is much more tricky than DataOut. When the device is finished
+	 * and switches to another phase, the SCSI engine should be finished too.
+	 * But: There might still be bytes left in its FIFO to be fetched by the DMA
+	 * engine and tra

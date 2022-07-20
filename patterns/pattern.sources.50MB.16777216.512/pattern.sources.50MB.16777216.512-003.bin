@@ -1,0 +1,21 @@
+>disconnecting = 1;
+
+	ttusb_stop_iso_xfer(ttusb);
+
+	ttusb->dvb_demux.dmx.close(&ttusb->dvb_demux.dmx);
+	dvb_net_release(&ttusb->dvbnet);
+	dvb_dmxdev_release(&ttusb->dmxdev);
+	dvb_dmx_release(&ttusb->dvb_demux);
+	if (ttusb->fe != NULL) dvb_unregister_frontend(ttusb->fe);
+	i2c_del_adapter(&ttusb->i2c_adap);
+	dvb_unregister_adapter(ttusb->adapter);
+
+	ttusb_free_iso_urbs(ttusb);
+
+	kfree(ttusb);
+
+	dprintk("%s: TTUSB DVB disconnected\n", __FUNCTION__);
+}
+
+static struct usb_device_id ttusb_table[] = {
+	{USB_DEVICE

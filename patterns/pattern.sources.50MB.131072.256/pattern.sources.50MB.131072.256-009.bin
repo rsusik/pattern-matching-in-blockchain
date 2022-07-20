@@ -1,0 +1,11 @@
+err;
+
+	rtnl_lock();
+	err = notifier_chain_register(&netdev_chain, nb);
+	if (!err) {
+		for (dev = dev_base; dev; dev = dev->next) {
+			nb->notifier_call(nb, NETDEV_REGISTER, dev);
+
+			if (dev->flags & IFF_UP) 
+				nb->notifier_call(nb, NETDEV_UP, dev);
+		}

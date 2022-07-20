@@ -1,0 +1,6 @@
+ / dmabuf->userfragsize;
+		if (codec_independent_spdif_locked > 0) {
+			if (dmabuf->mapped && (dmabuf->trigger & SPDIF_ENABLE_OUTPUT)) {
+				dmabuf->count += val;
+				dmabuf->swptr = (dmabuf->swptr + val) % dmabuf->dmasize;
+				__ali_update_lvi(state, 2);

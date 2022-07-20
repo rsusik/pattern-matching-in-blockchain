@@ -1,0 +1,6 @@
+irqrestore(&state->card->lock, flags);
+#if defined(DEBUG) || defined(DEBUG_MMAP)
+		printk("SNDCTL_DSP_GETIPTR %d, %d, %d, %d\n", cinfo.bytes,
+		       cinfo.blocks, cinfo.ptr, dmabuf->count);
+#endif
+		return copy_to_user(argp, &cinfo, sizeof(cinfo))? -EFAU

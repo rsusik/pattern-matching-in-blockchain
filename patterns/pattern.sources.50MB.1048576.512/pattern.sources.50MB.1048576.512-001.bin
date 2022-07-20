@@ -1,0 +1,27 @@
+dev = de620_probe(-1);
+	if (IS_ERR(de620_dev))
+		return PTR_ERR(de620_dev);
+	return 0;
+}
+
+void cleanup_module(void)
+{
+	unregister_netdev(de620_dev);
+	release_region(de620_dev->base_addr, 3);
+	free_netdev(de620_dev);
+}
+#endif /* MODULE */
+MODULE_LICENSE("GPL");
+
+
+/*
+ * (add '-DMODULE' when compiling as loadable module)
+ *
+ * compile-command:
+ *	gcc -D__KERNEL__ -Wall -Wstrict-prototypes -O2 \
+ *	 -fomit-frame-pointer -m486 \
+ *	-I/usr/src/linux/include -I../../net/inet -c de620.c
+*/
+/*
+ * Local variables:
+ 

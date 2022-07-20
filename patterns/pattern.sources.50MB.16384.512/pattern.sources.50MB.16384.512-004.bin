@@ -1,0 +1,17 @@
+a = state;
+	dmabuf->trigger = 0;
+	/* allocate hardware channels */
+	if (file->f_mode & FMODE_READ) {
+		if ((dmabuf->read_channel =
+		     card->alloc_rec_pcm_channel(card)) == NULL) {
+			kfree(card->states[i]);
+			card->states[i] = NULL;
+			return -EBUSY;
+		}
+		dmabuf->trigger |= PCM_ENABLE_INPUT;
+		ali_set_adc_rate(state, 8000);
+	}
+	if (file->f_mode & FMODE_WRITE) {
+		if (codec_independent_spdif_locked > 0) {
+			if ((dmabuf->codec_spdifout_channel = card->alloc_codec_spdifout_channel(card)) == NULL) {
+				

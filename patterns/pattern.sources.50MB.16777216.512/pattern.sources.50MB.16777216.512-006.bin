@@ -1,0 +1,14 @@
+(base_addr+(CySRER<<index)) & ~CyRxData);
+	if (info->flags & ASYNC_INITIALIZED) {
+	    /* Waiting for on-board buffers to be empty before closing 
+	       the port */
+	    CY_UNLOCK(info, flags);
+	    cy_wait_until_sent(tty, info->timeout);
+	    CY_LOCK(info, flags);
+	}
+    } else {
+#ifdef Z_WAKE
+	/* Waiting for on-board buffers to be empty before closing the port */
+	void __iomem *base_addr = cy_card[info->card].base_addr;
+	struct FIRM_ID __iomem *firm_id = base_addr + ID_ADDRESS;
+	struct ZFW_CTRL __iomem 

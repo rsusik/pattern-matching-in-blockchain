@@ -1,0 +1,18 @@
+ude "types.h" */
+#include <asm/signal.h>
+#include <asm/siginfo.h>
+/* #include <machine/sys/mdep_private.h> */
+
+#undef Fpustatus_register
+#define Fpustatus_register Fpu_register[0]
+
+/* General definitions */
+#define DOESTRAP 1
+#define NOTRAP 0
+#define SIGNALCODE(signal, code) ((signal) << 24 | (code));
+#define copropbit	1<<31-2	/* bit position 2 */
+#define opclass		9	/* bits 21 & 22 */
+#define fmt		11	/* bits 19 & 20 */
+#define df		13	/* bits 17 & 18 */
+#define twobits		3	/* mask low-order 2 bits */
+#define 

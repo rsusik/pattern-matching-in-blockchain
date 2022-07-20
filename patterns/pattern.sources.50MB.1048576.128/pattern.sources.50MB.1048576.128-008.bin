@@ -1,0 +1,6 @@
+x].type = idx;
+
+		if (netif_msg_probe(de))
+			printk(KERN_INFO "de%d:   media block #%u: %s",
+			       de->board_idx, i,
+			   

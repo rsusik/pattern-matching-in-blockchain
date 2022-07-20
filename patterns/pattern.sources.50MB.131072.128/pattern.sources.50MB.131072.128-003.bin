@@ -1,0 +1,6 @@
+0x44445555) goto weak;
+					/* E0 FE E0 FE F1 FE F1 FE */
+					if (n == 0x46465656) goto weak;
+				}
+			} else {
+				if (n < 0x6

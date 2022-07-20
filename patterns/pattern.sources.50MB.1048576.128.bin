@@ -1,0 +1,5 @@
+*srb,
+		u16 *pscsi_status);
+static void msgin_phase1(struct AdapterCtlBlk *acb, struct ScsiReqBlk *srb,
+		u16 *pscsi_status);
+st

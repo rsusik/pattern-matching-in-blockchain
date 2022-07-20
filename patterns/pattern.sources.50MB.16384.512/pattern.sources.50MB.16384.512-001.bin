@@ -1,0 +1,15 @@
+dmasize;
+				__ali_update_lvi(state, 2);
+				spin_unlock_irqrestore(&state->card->lock,
+						       flags);
+			} else
+				start_spdifout(state);
+		}
+		if (val & SPDIF_ENABLE_OUTPUT && !(dmabuf->enable & CONTROLLER_SPDIFOUT_RUNNING)) {
+			if (!dmabuf->controller_spdifout_channel) {
+				dmabuf->ready = 0;
+				dmabuf->controller_spdifout_channel = state->card->alloc_controller_spdifout_channel(state->card);
+				if (!dmabuf->controller_spdifout_channel)
+					return -EBUSY;
+			}
+			if (!dmabuf->ready && (ret = 

@@ -1,0 +1,13 @@
+
+		break;
+	default:
+		*port->baud =
+		  IO_STATE(R_SERIAL0_BAUD, tr_baud, c115k2Hz) |
+		  IO_STATE(R_SERIAL0_BAUD, rec_baud, c115k2Hz);
+		  break;
+        }
+
+	if (port->parity == 'E') {
+		rec_ctrl =
+		  IO_STATE(R_SERIAL0_REC_CTRL, rec_par, even) |
+		  IO_

@@ -1,0 +1,12 @@
+_QUEUE_TAG:
+		case HEAD_OF_QUEUE_TAG:
+		case ORDERED_QUEUE_TAG:
+			srb =
+			    msgin_qtag(acb, dcb,
+					      srb->msgin_buf[1]);
+			break;
+
+		case MESSAGE_REJECT:
+			DC395x_write16(acb, TRM_S1040_SCSI_CONTROL,
+				       DO_CLRATN | DO_DATALATCH);
+			/*

@@ -1,0 +1,17 @@
+ out;
+
+	ret = crypto_register_alg(&des3_ede_alg);
+	if (ret < 0)
+		crypto_unregister_alg(&des_alg);
+out:	
+	return ret;
+}
+
+static void __exit fini(void)
+{
+	crypto_unregister_alg(&des3_ede_alg);
+	crypto_unregister_alg(&des_alg);
+}
+
+module_init(init);
+module_e

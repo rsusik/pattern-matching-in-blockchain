@@ -1,0 +1,18 @@
+ of destroying an allocated device 
+ * 	interface. The reference to the device object is released.  
+ *	If this is the last reference then it will be freed.
+ */
+void free_netdev(struct net_device *dev)
+{
+#ifdef CONFIG_SYSFS
+	/*  Compatiablity with error handling in drivers */
+	if (dev->reg_state == NETREG_UNINITIALIZED) {
+		kfree((char *)dev - dev->padded);
+		return;
+	}
+
+	BUG_ON(dev->reg_state != NETREG_UNREGISTERED);
+	dev->reg_state = NETREG_RELEASED;
+
+	/* will free via class release */
+	class_device_put(&

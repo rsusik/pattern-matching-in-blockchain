@@ -1,0 +1,11 @@
+ef _SPARC64_DCU_H
+#define _SPARC64_DCU_H
+
+/* UltraSparc-III Data Cache Unit Control Register */
+#define DCU_CP		0x0002000000000000 /* Physical Cache Enable w/o mmu*/
+#define DCU_CV		0x0001000000000000 /* Virtual Cache Enable	w/o mmu	*/
+#define DCU_ME		0x0000800000000000 /* NC-store Merging Enable	*/
+#define DCU_RE		0x0000400000000000 /* RAW bypass Enable		*/
+#define DCU_PE		0x0000200000000000 /* PCache Enable		*/
+#define DCU_HPE		0x0000100000000000 /* HW prefetch Enable		*/
+#define DCU_SPE		0x00000800000000

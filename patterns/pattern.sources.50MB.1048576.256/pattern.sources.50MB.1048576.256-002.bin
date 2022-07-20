@@ -1,0 +1,9 @@
+(Fpu_register[index]) = 0
+#define Excp_format() \
+    (current_ir >> ((current_ir>>opclass & twobits)==1 ? df : fmt) & twobits)
+
+/* Miscellaneous definitions */
+#define Fpu_sgl(index) Fpu_register[index*2]
+
+#define Fpu_dblp1(index) Fpu_register[index*2]
+#d

@@ -1,0 +1,6 @@
+f(state, 0)) != 0)
+					return val;
+			}
+		}
+		spin_lock_irqsave(&state->card->lock, flags);
+		val = ali_get_free_write_space(st

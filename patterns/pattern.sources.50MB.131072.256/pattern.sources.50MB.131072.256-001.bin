@@ -1,0 +1,8 @@
+ETIF_F_NO_CSUM)) &&
+	     (!(dev->features & NETIF_F_IP_CSUM) ||
+	      skb->protocol != htons(ETH_P_IP))))
+	      	if (skb_checksum_help(skb, 0))
+	      		goto out_kfree_skb;
+
+	/* Disable soft irqs for various locks below. Also 
+	 * stops preemption for R

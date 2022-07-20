@@ -1,0 +1,10 @@
+HANNELMASK:
+#ifdef DEBUG
+		printk("SNDCTL_DSP_GETCHANNELMASK\n");
+#endif
+		if (get_user(val, p))
+			return -EFAULT;
+		/* Based on AC'97 DAC support, not ICH hardware */
+		val = DSP_BIND_FRONT;
+		if (state->card->ac97_features & 0x0004)
+			val |= DSP_BIND_S

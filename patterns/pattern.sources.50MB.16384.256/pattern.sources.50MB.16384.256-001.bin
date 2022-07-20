@@ -1,0 +1,8 @@
+states[i] = NULL;
+					return -EBUSY;
+				}
+				dmabuf->trigger |= SPDIF_ENABLE_OUTPUT;
+				ali_set_spdifout_rate(state, controller_independent_spdif_locked);
+			} else {
+				if ((dmabuf->write_channel = card->alloc_pcm_channel(card)) == NULL) {
+					kfree

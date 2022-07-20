@@ -1,0 +1,6 @@
+_ioctl_mixdev,
+	.open		= es1370_open_mixdev,
+	.release	= es1370_release_mixdev,
+};
+
+/* -----------------------------------------

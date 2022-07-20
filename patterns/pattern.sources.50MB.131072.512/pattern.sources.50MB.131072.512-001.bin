@@ -1,0 +1,17 @@
+ice by its name
+ *	@name: name to find
+ *
+ *	Find an interface by name. Must be called under RTNL semaphore
+ *	or @dev_base_lock. If the name is found a pointer to the device
+ *	is returned. If the name is not found then %NULL is returned. The
+ *	reference counters are not incremented so the caller must be
+ *	careful with locks.
+ */
+
+struct net_device *__dev_get_by_name(const char *name)
+{
+	struct hlist_node *p;
+
+	hlist_for_each(p, dev_name_hash(name)) {
+		struct net_device *dev
+			= hlist_entry(p, struct n

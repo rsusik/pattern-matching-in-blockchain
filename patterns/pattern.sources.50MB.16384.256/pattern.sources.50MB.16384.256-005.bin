@@ -1,0 +1,8 @@
+ {
+		if (codec_independent_spdif_locked > 0) {
+			if ((dmabuf->codec_spdifout_channel = card->alloc_codec_spdifout_channel(card)) == NULL) {
+				kfree(card->states[i]);
+				card->states[i] = NULL;
+				return -EBUSY;
+			}
+			dmabuf->trigger |= SPDIF_ENABLE_

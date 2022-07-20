@@ -1,0 +1,5 @@
+out the media - but trying to keep it backwards
+** compatible with the de500-xa and de500-aa.
+** Whether it's BNC, AUI, SYM or MII is sorted out in the infoblock
+** functions and set during de4x5_mac_port() and/or de4x5_reset_phy().
+** This routine just ha

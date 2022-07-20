@@ -1,0 +1,6 @@
+;
+	case SNDCTL_DSP_SETSPDIF:	/* Set S/PDIF Control register */
+#ifdef DEBUG
+		printk("SNDCTL_DSP_SETSPDIF\n");
+#endif
+		if (get_

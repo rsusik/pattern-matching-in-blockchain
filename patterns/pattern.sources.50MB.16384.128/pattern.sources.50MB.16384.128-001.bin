@@ -1,0 +1,5 @@
+->ac97_status & SPDIF_ON)
+					ali_set_spdif_output(state, -1, 0);
+				mask =
+				    val & (DSP_BIND_FRONT | DSP_BIND_SURR |
+		

@@ -1,0 +1,6 @@
+, "MDM Opts. = 0x%08x",  modem->Options);
+        diva_mnt_internal_dprintf(pC->hDbg->id, DLI_STAT, "MDM Tx    = %lu Bps", modem->TxSpeed);
+        diva_mnt_internal_dprintf(pC->hDbg->id, DLI_STAT, "MDM Rx    = %lu Bps", modem->RxSpeed);
+        diva_mnt_internal_dprintf(pC->hDbg->id, DLI_STAT, "MDM RT    = %lu mSec",
+                                                                     modem->RoundtripMsec);
+        diva_mnt_internal_dprintf(pC->hDbg->id, DLI_STAT, "MDM Sr    = %lu",     modem->SymbolRate);

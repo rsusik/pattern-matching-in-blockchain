@@ -1,0 +1,23 @@
+ vmalloc(sizeof(struct mixer_operations)));
+
+	if (sound_nblocks < 1024)
+		sound_nblocks++;
+	if (op == NULL) {
+		printk(KERN_ERR "Sound: Can't allocate mixer driver for (%s)\n", name);
+		return -ENOMEM;
+	}
+	memset((char *) op, 0, sizeof(struct mixer_operations));
+	memcpy((char *) op, (char *) driver, driver_size);
+
+	strlcpy(op->name, name, sizeof(op->name));
+	op->devc = devc;
+
+	mixer_devs[n] = op;
+	return n;
+}
+
+void sound_unload_audiodev(int dev)
+{
+	if (dev != -1) {
+		DMAbuf_deinit(dev);
+		audio_devs[dev] = 

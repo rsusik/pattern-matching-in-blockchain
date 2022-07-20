@@ -1,0 +1,23 @@
+x88_tvnorm tvnorms[] = {
+	{
+		.name      = "NTSC-M",
+		.id        = V4L2_STD_NTSC_M,
+		.cxiformat = VideoFormatNTSC,
+		.cxoformat = 0x181f0008,
+	},{
+		.name      = "NTSC-JP",
+		.id        = V4L2_STD_NTSC_M_JP,
+		.cxiformat = VideoFormatNTSCJapan,
+		.cxoformat = 0x181f0008,
+#if 0
+	},{
+		.name      = "NTSC-4.43",
+		.id        = FIXME,
+		.cxiformat = VideoFormatNTSC443,
+		.cxoformat = 0x181f0008,
+#endif
+	},{
+		.name      = "PAL-BG",
+		.id        = V4L2_STD_PAL_BG,
+		.cxiformat = VideoFormatPAL,
+		.cxoformat = 

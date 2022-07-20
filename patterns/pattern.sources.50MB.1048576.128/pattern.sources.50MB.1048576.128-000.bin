@@ -1,0 +1,5 @@
+>= 0) {
+		if (dec_interrupt[DEC_IRQ_LANCE_MERR] >= 0) {
+#ifdef CONFIG_TC
+			if (dec_lance_init(ASIC_LANCE, -1) >= 0)
+				count++

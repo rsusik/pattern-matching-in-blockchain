@@ -1,0 +1,13 @@
+lp->autosense == AUTO)) {
+	    lp->media = TP_SUSPECT;
+	    next_tick = 3000;
+	}
+	break;
+	
+    case TP_SUSPECT:
+	next_tick = de4x5_suspect_state(dev, 1000, TP, test_tp, dc21041_autoconf);
+	break;
+	
+    case AUI:
+	if (!lp->tx_enable) {
+	    if (lp->timeout 

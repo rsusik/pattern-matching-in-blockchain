@@ -1,0 +1,5 @@
+*gpe_block;
+	acpi_native_uint                i;
+
+
+	ACPI_FUNCTION

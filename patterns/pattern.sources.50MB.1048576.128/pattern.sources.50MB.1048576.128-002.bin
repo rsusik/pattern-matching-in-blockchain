@@ -1,0 +1,11 @@
+_wait_30us(io_port);
+	}
+
+	/* Disable chip select */
+	outb(0, io_port + TRM_S1040_GEN_NVRAM);
+	return result;
+}
+
+
+/**
+ * trms1040

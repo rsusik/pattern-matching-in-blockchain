@@ -1,0 +1,3 @@
+rch for an interface by index. Returns %NULL if the device
+ *	is not found or a pointer to the device. The device has not
+ *	had

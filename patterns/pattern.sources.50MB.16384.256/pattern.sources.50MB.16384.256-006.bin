@@ -1,0 +1,8 @@
+_rate(state, controller_independent_spdif_locked);
+			} else {
+				if ((dmabuf->write_channel = card->alloc_pcm_channel(card)) == NULL) {
+					kfree(card->states[i]);
+					card->states[i] = NULL;
+					return -EBUSY;
+				}
+				/* Initialize to 8kHz?  What i

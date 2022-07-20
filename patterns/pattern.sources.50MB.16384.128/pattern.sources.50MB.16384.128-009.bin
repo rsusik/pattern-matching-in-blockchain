@@ -1,0 +1,5 @@
+				DSP_CAP_MMAP | DSP_CAP_BIND, p);
+	case SNDCTL_DSP_GETTRIGGER:
+		val = 0;
+#ifdef DEBUG
+		printk("SNDCTL_DSP_GETTRIGGER 0x%x\n

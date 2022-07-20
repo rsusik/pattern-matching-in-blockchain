@@ -1,0 +1,15 @@
+defined(DEBUG) || defined(DEBUG_MMAP)
+		printk("SNDCTL_DSP_GETISPACE %d, %d, %d, %d\n",
+		       abinfo.bytes, abinfo.fragsize, abinfo.fragments,
+		       abinfo.fragstotal);
+#endif
+		return copy_to_user(argp, &abinfo,
+				    sizeof(abinfo)) ? -EFAULT : 0;
+	case SNDCTL_DSP_GETIPTR:
+		if (!(file->f_mode & FMODE_READ))
+			return -EINVAL;
+		if (!dmabuf->ready && (val = prog_dmabuf(state, 0)) != 0)
+			return val;
+		spin_lock_irqsave(&state->card->lock, flags);
+		val = ali_get_available_read_data(state);
+		cinf

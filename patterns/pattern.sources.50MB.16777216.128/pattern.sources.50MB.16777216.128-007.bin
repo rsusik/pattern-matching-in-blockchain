@@ -1,0 +1,6 @@
+heir respective values as they appear in the CHCR registers.
+ *
+ * Defaults to a 64-bit transfer size.
+ */
+enum {
+	XMIT_SZ_64BIT

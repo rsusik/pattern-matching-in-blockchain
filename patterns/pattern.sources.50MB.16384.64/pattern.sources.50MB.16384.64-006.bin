@@ -1,0 +1,4 @@
+PDIFOUT_RUNNING) {
+			stop_spdifout(state);
+		}
+		dmabuf->trigge

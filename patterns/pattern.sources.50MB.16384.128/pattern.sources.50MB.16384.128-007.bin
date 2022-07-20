@@ -1,0 +1,7 @@
+DSP_GETCHANNELMASK:
+#ifdef DEBUG
+		printk("SNDCTL_DSP_GETCHANNELMASK\n");
+#endif
+		if (get_user(val, p))
+			return -EFAULT;
+		/*

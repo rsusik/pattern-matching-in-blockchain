@@ -1,0 +1,3 @@
+e->card->ac97_status & SPDIF_ON))
+					val &= ~DSP_BIND_SPDIF;
+	

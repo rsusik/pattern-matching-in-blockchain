@@ -1,0 +1,2 @@
+)!=0)
+#define Dblext_isnotzero_low31p3(val) (Dextlow31p3(val)!=0

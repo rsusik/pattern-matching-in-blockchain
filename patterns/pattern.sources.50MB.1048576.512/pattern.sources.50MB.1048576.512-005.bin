@@ -1,0 +1,23 @@
+ *dev)
+{
+    struct de4x5_private *lp = netdev_priv(dev);
+    u_long iobase = dev->base_addr;
+    
+    lp->stats.rx_missed_errors = (int)(inl(DE4X5_MFC) & (MFC_OVFL | MFC_CNTR));
+    
+    return &lp->stats;
+}
+
+static void
+de4x5_local_stats(struct net_device *dev, char *buf, int pkt_len)
+{
+    struct de4x5_private *lp = netdev_priv(dev);
+    int i;
+
+    for (i=1; i<DE4X5_PKT_STAT_SZ-1; i++) {
+        if (pkt_len < (i*DE4X5_PKT_BIN_SZ)) {
+	    lp->pktStats.bins[i]++;
+	    i = DE4X5_PKT_STAT_SZ;
+	}
+    }
+    i

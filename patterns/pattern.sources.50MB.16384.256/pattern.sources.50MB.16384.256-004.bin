@@ -1,0 +1,9 @@
+DSP_SETSPDIF:	/* Set S/PDIF Control register */
+#ifdef DEBUG
+		printk("SNDCTL_DSP_SETSPDIF\n");
+#endif
+		if (get_user(val, p))
+			return -EFAULT;
+		/* Check to make sure the codec supports S/PDIF transmitter */
+		if ((state->card->ac97_features & 4)) {
+			

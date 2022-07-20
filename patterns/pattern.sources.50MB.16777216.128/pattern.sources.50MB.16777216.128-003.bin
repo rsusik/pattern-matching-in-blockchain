@@ -1,0 +1,6 @@
+7;
+		unsigned char lo_irq = inb(ioaddr + ES_CFG1) & 0xfe;
+
+		if (hi_irq != 0) {
+			dev->irq = hi_irq_map[hi_irq - 1];
+		} else {

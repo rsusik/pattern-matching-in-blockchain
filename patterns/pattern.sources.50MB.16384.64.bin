@@ -1,0 +1,5 @@
+uration to 0x%04x.\n", val);
+				return -EFAULT;
+			}
+		}
+#ifdef

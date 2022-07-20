@@ -1,0 +1,3 @@
+irqsave(&state->card->lock, flags);
+		abinfo.bytes = ali_get_available_read_data(state);
+		abinfo.fragsize = dmabuf->userfragsiz

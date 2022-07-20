@@ -1,0 +1,14 @@
+whole chunks worth of metadata in memory at once.
+	 */
+	void *area;
+
+	/*
+	 * Used to keep track of which metadata area the data in
+	 * 'chunk' refers to.
+	 */
+	uint32_t current_area;
+
+	/*
+	 * The next free chunk for an exception.
+	 */
+	uint32_t next_free;

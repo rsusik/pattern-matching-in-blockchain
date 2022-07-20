@@ -1,0 +1,21 @@
+ys that exhibit this
+ *   property.
+ *
+ */
+static int des3_ede_setkey(void *ctx, const u8 *key,
+                           unsigned int keylen, u32 *flags)
+{
+	unsigned int i, off;
+	struct des3_ede_ctx *dctx = ctx;
+
+	if (!(memcmp(key, &key[DES_KEY_SIZE], DES_KEY_SIZE) && 
+	    memcmp(&key[DES_KEY_SIZE], &key[DES_KEY_SIZE * 2],
+	    					DES_KEY_SIZE))) {
+
+		*flags |= CRYPTO_TFM_RES_BAD_KEY_SCHED;
+		return -EINVAL;
+	}
+	
+	for (i = 0, off = 0; i < 3; i++, off += DES_EXPKEY_WORDS,
+							key += DES_KEY_SIZE) {
+	

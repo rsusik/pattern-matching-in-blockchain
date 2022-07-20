@@ -1,0 +1,25 @@
+the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+*/
+
+#include <linux/kernel.h>
+#include <linux/init.h>
+#include <linux/module.h>
+#include <linux/moduleparam.h>
+#include <linux/string.h>
+#include <linux/slab.h>
+#include "dvb_frontend.h"
+#include "cx22700.h"
+
+
+struct cx22700_state {
+
+	struct i2c_adapter* i2c;
+
+	struct dvb_frontend_ops ops;
+
+	const struct cx22700_config* config;
+
+	struct dvb_frontend fr

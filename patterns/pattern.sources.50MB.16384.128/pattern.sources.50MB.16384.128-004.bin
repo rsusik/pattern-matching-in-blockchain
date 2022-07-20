@@ -1,0 +1,5 @@
+t share ) */
+					ali_set_spdif_output(state, AC97_EA_SPSA_3_4, dmabuf->rate);	//I do not modify
+				}
+
+				if (!(state->card->a

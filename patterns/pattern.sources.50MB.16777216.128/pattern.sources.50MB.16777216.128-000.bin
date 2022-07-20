@@ -1,0 +1,4 @@
+ify that the resource type is sync bw only
+		 */
+		if (msg_res_type != SYNC_BW) {
+			DB_ESS("ESS: ignoring RAF with para problem

@@ -1,0 +1,9 @@
+{
+    dn_irqs[irq].handler=handler;
+    dn_irqs[irq].flags=IRQ_FLG_STD;
+    dn_irqs[irq].dev_id=dev_id;
+    dn_irqs[irq].devname=devname;
+    if(irq<8)
+      *(volatile unsigned char *)(pica+1)&=~(1<<irq);
+    else
+      *(volatile unsigned char *)(picb+1)

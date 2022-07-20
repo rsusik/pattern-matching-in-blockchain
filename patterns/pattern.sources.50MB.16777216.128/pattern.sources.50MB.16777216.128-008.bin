@@ -1,0 +1,9 @@
+lock);
+
+	return cleaned;
+}
+
+/**
+ * e1000_rx_checksum - Receive Checksum Offload for 82543
+ * @adapter: board private structure
+ 

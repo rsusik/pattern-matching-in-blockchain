@@ -1,0 +1,4 @@
+e = dmabuf->userfragsize;
+		abinfo.fragstotal = dmabuf->userfrags;
+		abinfo.fragments = abinfo.bytes / dmabuf->userfragsize;
+		s

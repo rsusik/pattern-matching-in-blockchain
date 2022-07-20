@@ -1,0 +1,10 @@
+ itself might not work, as it
+ * might be a negative dentry which has no information associated with
+ * it */
+
+/*
+locking rules:
+		big lock	dcache_lock	d_lock   may block
+d_revalidate:	no		no		no       yes
+d_hash		no		no		no       yes
+d_compare:	no		yes		y

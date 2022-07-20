@@ -1,0 +1,8 @@
+xt;
+	}
+
+	/* no more virtual channel avaiable */
+	if (!state)
+		return -ENODEV;
+found_virt:
+	/* initialize the virtual channel */

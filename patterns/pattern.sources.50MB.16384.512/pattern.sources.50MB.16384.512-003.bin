@@ -1,0 +1,14 @@
+				dmabuf->swptr = (dmabuf->swptr + val) % dmabuf->dmasize;
+				__ali_update_lvi(state, 2);
+			}
+		} else {
+			if (controller_independent_spdif_locked > 0) {
+				if (dmabuf->mapped && (dmabuf->trigger & SPDIF_ENABLE_OUTPUT)) {
+					dmabuf->count += val;
+					dmabuf->swptr = (dmabuf->swptr + val) % dmabuf->dmasize;
+					__ali_update_lvi(state, 3);
+				}
+			} else {
+				if (dmabuf->mapped && (dmabuf->trigger & PCM_ENABLE_OUTPUT)) {
+					dmabuf->count += val;
+					dmabuf->swptr = (dmabuf->swptr + val) % dmabu

@@ -1,0 +1,4 @@
+ FE F1 FE */
+					if (n == 0x46465656) goto weak;
+				}
+			} els

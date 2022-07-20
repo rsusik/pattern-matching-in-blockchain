@@ -1,0 +1,7 @@
+ata->max_direct_range >> BEFS_SB(sb)->block_shift;
+	search_blk = blockno - indir_start_blk;
+
+	/* Examine blocks of the indirect run one at a time */
+	for (i = 0; i < indirect.len; i++) {
+		indirblock = befs_bread(sb, indirblockno + i);
+		if (indirblock == 

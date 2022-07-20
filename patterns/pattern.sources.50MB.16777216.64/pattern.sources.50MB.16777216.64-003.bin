@@ -1,0 +1,2 @@
+ttr* elanfreq_attr[] = {
+	&cpufreq_freq_attr_scaling_available_f

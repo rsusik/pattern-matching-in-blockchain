@@ -1,0 +1,15 @@
+l information about quotafile */
+struct v1_mem_dqinfo {
+};
+
+#endif	/* _LINUX_DQBLK_V1_H */
+/*
+ *	Definitions of structures for vfsv0 quota format
+ */
+
+#ifndef _LINUX_DQBLK_V2_H
+#define _LINUX_DQBLK_V2_H
+
+#include <linux/types.h>
+
+/* id numbers of quota for

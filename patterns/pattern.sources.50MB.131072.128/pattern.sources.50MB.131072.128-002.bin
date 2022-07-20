@@ -1,0 +1,7 @@
+evice *dev;
+
+	read_lock(&dev_base_lock);
+	dev = __dev_get_by_name(name);
+	if (dev)
+		dev_hold(dev);
+	read_unlock(&dev_base_lock)

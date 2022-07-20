@@ -1,0 +1,4 @@
+extern void skb_release_data(struct sk_buff *);
+
+/* Keep head the same: replace data */
+int __skb_linearize(struct sk_buff *skb,

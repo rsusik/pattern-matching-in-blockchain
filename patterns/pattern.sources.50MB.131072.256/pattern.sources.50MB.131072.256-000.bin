@@ -1,0 +1,16 @@
+);
+	spin_unlock_bh(&dev->xmit_lock);
+}
+
+/*
+ *	Delete a device level multicast
+ */
+ 
+int dev_mc_delete(struct net_device *dev, void *addr, int alen, int glbl)
+{
+	int err = 0;
+	struct dev_mc_list *dmi, **dmip;
+
+	spin_lock_bh(&dev->xmit_lock);
+
+	for (dmip = &

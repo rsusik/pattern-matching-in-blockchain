@@ -1,0 +1,21 @@
+VAL;
+			if (!netif_device_present(dev))
+				return -ENODEV;
+			return dev_mc_add(dev, ifr->ifr_hwaddr.sa_data,
+					  dev->addr_len, 1);
+
+		case SIOCDELMULTI:
+			if (!dev->set_multicast_list ||
+			    ifr->ifr_hwaddr.sa_family != AF_UNSPEC)
+				return -EINVAL;
+			if (!netif_device_present(dev))
+				return -ENODEV;
+			return dev_mc_delete(dev, ifr->ifr_hwaddr.sa_data,
+					     dev->addr_len, 1);
+
+		case SIOCGIFINDEX:
+			ifr->ifr_ifindex = dev->ifindex;
+			return 0;
+
+		case SIOCGIFTXQLEN:
+			ifr->ifr_qlen = 

@@ -1,0 +1,25 @@
+softnet_seq_next,
+	.stop  = softnet_seq_stop,
+	.show  = softnet_seq_show,
+};
+
+static int softnet_seq_open(struct inode *inode, struct file *file)
+{
+	return seq_open(file, &softnet_seq_ops);
+}
+
+static struct file_operations softnet_seq_fops = {
+	.owner	 = THIS_MODULE,
+	.open    = softnet_seq_open,
+	.read    = seq_read,
+	.llseek  = seq_lseek,
+	.release = seq_release,
+};
+
+#ifdef WIRELESS_EXT
+extern int wireless_proc_init(void);
+#else
+#define wireless_proc_init() 0
+#endif
+
+static int __init dev_proc_init(void)

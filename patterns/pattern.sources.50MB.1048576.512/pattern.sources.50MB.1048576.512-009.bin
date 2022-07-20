@@ -1,0 +1,20 @@
+unt;
+
+	tot_cnt = 0;
+#endif /* COUNT_LOOPS */
+#endif /* LOWSPEED */
+
+#ifdef LOWSPEED
+	/* No further optimization useful, the limit is in the adapter. */
+	while (count-- > 0) {
+		*data++ = de620_read_byte(dev);
+		de620_flip_ds(dev);
+	}
+#ifdef COUNT_LOOPS
+	/* trial debug output: loops per byte in de620_ready() */
+	printk("READ(%d)\n", tot_cnt/(2*(bytes?bytes:1)));
+#endif /* COUNT_LOOPS */
+#else /* not LOWSPEED */
+	while (count-- > 0) {
+		value = inb(STATUS_PORT) & 0xf0; /* High nibble */
+		outb(uflip, COMMAND_

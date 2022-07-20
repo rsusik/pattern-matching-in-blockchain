@@ -1,0 +1,13 @@
+
+
+	if ((dmi = dmi1) == NULL) {
+		spin_unlock_bh(&dev->xmit_lock);
+		return -ENOMEM;
+	}
+	memcpy(dmi->dmi_addr, addr, alen);
+	dmi->dmi_addrlen = alen;
+	dmi->next = dev->mc_list;
+	dmi->dmi_users = 1;
+	dmi->dmi_gusers = glbl ? 1 : 0;
+	dev->mc_list = dmi;
+	dev-

@@ -1,0 +1,3 @@
+ze) > 0) {
+		dest = write_sq.buffers[write_sq.rear];
+		bUsed = w

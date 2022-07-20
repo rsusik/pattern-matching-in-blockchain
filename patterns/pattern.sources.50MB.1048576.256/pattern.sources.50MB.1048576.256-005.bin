@@ -1,0 +1,13 @@
+se DE_MEDIA_TP_FD:
+		if (!(de->media_advertise & ADVERTISED_10baseT_Full))
+			return 0;
+		break;
+	}
+	
+	return 1;
+}
+
+static void de21041_media_timer (unsigned long data)
+{
+	struct de_private *de = (struct de_private *) data;
+	struct net_device *dev = de->de

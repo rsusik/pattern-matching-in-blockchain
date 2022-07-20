@@ -1,0 +1,3 @@
+t);
+#endif
+		return put_user(val

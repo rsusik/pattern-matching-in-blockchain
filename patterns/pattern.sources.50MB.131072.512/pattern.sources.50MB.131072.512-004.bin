@@ -1,0 +1,17 @@
+e of
+ *   multiple keys.
+ *
+ *   However, if the first two or last two independent 64-bit keys are
+ *   equal (k1 == k2 or k2 == k3), then the DES3 operation is simply the
+ *   same as DES.  Implementers MUST reject keys that exhibit this
+ *   property.
+ *
+ */
+static int des3_ede_setkey(void *ctx, const u8 *key,
+                           unsigned int keylen, u32 *flags)
+{
+	unsigned int i, off;
+	struct des3_ede_ctx *dctx = ctx;
+
+	if (!(memcmp(key, &key[DES_KEY_SIZE], DES_KEY_SIZE) && 
+	    memcmp(&key[DES_K

@@ -1,0 +1,4 @@
+set.
+	   */
+	excptype = Excp_type(exception_index);
+	if (excptyp

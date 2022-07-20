@@ -1,0 +1,9 @@
+ndependent_spdif_locked);
+						} else {
+							if ((i_scr & 0x00300000) == 0x00300000) {
+								ali_set_spdif_output(state, AC97_EA_SPSA_10_11, codec_independent_spdif_locked);
+							}
+						}
+					}
+				} else {	/* codec spdif out (pcm out share ) */
+	

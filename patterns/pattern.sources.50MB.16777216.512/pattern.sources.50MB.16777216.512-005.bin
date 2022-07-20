@@ -1,0 +1,22 @@
+ NO_FRAME */
+
+	qh_refresh(ehci, qh);
+	qh->hw_next = EHCI_LIST_END;
+	frame = qh->start;
+
+	/* reuse the previous schedule slots, if we can */
+	if (frame < qh->period) {
+		uframe = ffs (le32_to_cpup (&qh->hw_info2) & 0x00ff);
+		status = check_intr_schedule (ehci, frame, --uframe,
+				qh, &c_mask);
+	} else {
+		uframe = 0;
+		c_mask = 0;
+		status = -ENOSPC;
+	}
+
+	/* else scan the schedule to find a group of slots such that all
+	 * uframes have enough periodic bandwidth available.
+	 */
+	if (status) {
+		/* "normal" 

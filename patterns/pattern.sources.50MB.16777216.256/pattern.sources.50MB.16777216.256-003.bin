@@ -1,0 +1,12 @@
+ic int eth16i_open(struct net_device *dev)
+{
+	struct eth16i_local *lp = netdev_priv(dev);
+	int ioaddr = dev->base_addr;
+	
+	/* Powerup the chip */
+	outb(0xc0 | POWERUP, ioaddr + CONFIG_REG_1);
+
+	/* Initialize the chip */
+	eth16i_initialize(dev, 0);  
+
+	/* S

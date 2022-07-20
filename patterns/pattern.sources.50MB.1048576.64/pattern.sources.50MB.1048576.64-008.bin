@@ -1,0 +1,2 @@
+initiator mode		*/
+#define PARITYCHECK			0x10	/* Enable parity c

@@ -1,0 +1,7 @@
+way to recover if something goes wrong.
+ */
+
+static int de600_open(struct net_device *dev)
+{
+	unsigned long flags;
+	int ret = re

@@ -1,0 +1,3 @@
+ali_state *state = NULL;
+	struct dmabuf *dmabuf = NULL;
+	unsigne

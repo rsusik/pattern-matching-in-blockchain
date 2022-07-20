@@ -1,0 +1,32 @@
+t->state = TASK_INTERRUPTIBLE;
+		schedule_timeout(1);
+	}
+
+	/*
+	 *	Call the device specific close. This cannot fail.
+	 *	Only if device is UP
+	 *
+	 *	We allow it to be called even after a DETACH hot-plug
+	 *	event.
+	 */
+	if (dev->stop)
+		dev->stop(dev);
+
+	/*
+	 *	Device is now down.
+	 */
+
+	dev->flags &= ~IFF_UP;
+
+	/*
+	 * Tell people we are down
+	 */
+	notifier_call_chain(&netdev_chain, NETDEV_DOWN, dev);
+
+	return 0;
+}
+
+
+/*
+ *	Device change register/unregister. These are not inline or static
+ *	as we export the

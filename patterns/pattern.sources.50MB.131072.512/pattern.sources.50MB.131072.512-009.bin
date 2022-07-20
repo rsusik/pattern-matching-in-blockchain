@@ -1,0 +1,20 @@
+d removes it
+ *	from the kernel tables. On success 0 is returned, on a failure
+ *	a negative errno code is returned.
+ *
+ *	This is just a wrapper for unregister_netdevice that takes
+ *	the rtnl semaphore.  In general you want to use this and not
+ *	unregister_netdevice.
+ */
+void unregister_netdev(struct net_device *dev)
+{
+	rtnl_lock();
+	unregister_netdevice(dev);
+	rtnl_unlock();
+}
+
+EXPORT_SYMBOL(unregister_netdev);
+
+#ifdef CONFIG_HOTPLUG_CPU
+static int dev_cpu_callback(struct notifier_block *nfb,
+			    uns

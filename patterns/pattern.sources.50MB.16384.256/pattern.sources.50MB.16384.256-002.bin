@@ -1,0 +1,9 @@
+t = ali_get_free_write_space(state);
+				dmabuf->swptr = (dmabuf->swptr + dmabuf->count) % dmabuf->dmasize;
+				__ali_update_lvi(state, 2);
+				spin_unlock_irqrestore(&state->card->lock,
+						       flags);
+			} else
+				start_spdifout(state);
+		}
+		if (v

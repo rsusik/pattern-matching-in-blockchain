@@ -1,0 +1,14 @@
+if (codec_independent_spdif_locked > 0) {
+
+					if ((i_scr & 0x00300000) == 0x00100000) {
+						ali_set_spdif_output(state, AC97_EA_SPSA_7_8, codec_independent_spdif_locked);
+					} else {
+						if ((i_scr & 0x00300000) == 0x00200000) {
+							ali_set_spdif_output(state, AC97_EA_SPSA_6_9, codec_independent_spdif_locked);
+						} else {
+							if ((i_scr & 0x00300000) == 0x00300000) {
+								ali_set_spdif_output(state, AC97_EA_SPSA_10_11, codec_independent_spdif_locked);
+							}
+						}
+					}
+				} else {
