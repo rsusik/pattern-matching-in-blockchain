@@ -79,3 +79,16 @@ brownie run execute
 ## Results
 
 All collected results are located in [`results.csv`](./results.csv).
+
+## Citation
+
+The preprint is available at https://arxiv.org/abs/2207.14592.
+
+```
+@article{susik2022pattern,
+  url = {https://arxiv.org/abs/2207.14592},
+  author = {Susik, Robert and Nowotniak, Robert},
+  title = {Pattern matching algorithms in Blockchain for network fees reduction},
+  publisher = {arXiv}
+}
+```
