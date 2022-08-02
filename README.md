@@ -1,8 +1,8 @@
-# Pattern matching algorithms in Blockchain for network fees
+# Pattern matching algorithms in Blockchain for network fees reduction
 
 ## About
 
-Exact pattern matching algorithms in Solidity/YUL language.
+Efficient exact pattern matching algorithms implementation in Solidity/YUL language.
 
 ### Algorithms
 
