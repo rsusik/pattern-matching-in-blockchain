@@ -82,13 +82,15 @@ All collected results are located in [`results.csv`](./results.csv).
 
 ## Citation
 
-The preprint is available at https://arxiv.org/abs/2207.14592.
+The paper is available at https://link.springer.com/article/10.1007/s11227-024-06115-8
 
 ```
-@article{susik2022pattern,
-  url = {https://arxiv.org/abs/2207.14592},
-  author = {Susik, Robert and Nowotniak, Robert},
-  title = {Pattern matching algorithms in Blockchain for network fees reduction},
-  publisher = {arXiv}
+@article{susik2024pattern,
+  title={Pattern matching algorithms in blockchain for network fees reduction},
+  author={Susik, Robert and Nowotniak, Robert},
+  journal={The Journal of Supercomputing},
+  pages={1--19},
+  year={2024},
+  publisher={Springer}
 }
 ```
